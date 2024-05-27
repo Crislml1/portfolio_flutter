@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter/presentation/screens/home_screen.dart';
+import 'package:portfolio_flutter/config/themes/app_theme.dart';
+import 'package:portfolio_flutter/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,10 +13,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: AppTheme().theme(),
+      // ThemeData(
+      //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      //   useMaterial3: true,
+      // ),
       home: const HomeScreen()
     );
   }

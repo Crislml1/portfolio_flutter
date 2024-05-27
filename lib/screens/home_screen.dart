@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_flutter/constants/colors.dart';
+import 'package:portfolio_flutter/widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -9,50 +10,51 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
       backgroundColor: CustomColors.scaffoldBg,
+      endDrawer: const CustomDrawer(),
       body: ListView(
         scrollDirection: Axis.vertical,
         children: [
           //* MAIN
-          Container(
-            height: 500,
-            width: double.maxFinite,
-            color: Colors.blueGrey,
-            child: Text('Empieza el main'),
+          Header(
+            onMenuTap: () {
+              scaffoldKey.currentState?.openEndDrawer();
+            },
           ),
           //* SKILLS
           Container(
             height: 500,
             width: double.maxFinite,
             color: Colors.blueGrey,
-            child: Text('Empieza skills'),
+            child: const Text('Empieza skills'),
           ),
           //* PROJECTS
           Container(
             height: 500,
             width: double.maxFinite,
-            color: Colors.blueGrey,
-            child: Text('Empieza projects'),
+            child: const Text('Empieza projects'),
           ),
           //* CONTACT
           Container(
             height: 500,
             width: double.maxFinite,
             color: Colors.blueGrey,
-            child: Text('Empieza el contact'),
+            child: const Text('Empieza el contact'),
           ),
           //* FOOTER
           Container(
             height: 500,
             width: double.maxFinite,
-            color: Colors.blueGrey,
-            child: Text('Empieza el footer'),
+            child: const Text('Empieza el footer'),
           ),
         ],
-      )
+      ),
     );
   }
 }
+
