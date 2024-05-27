@@ -13,6 +13,10 @@ class _HomeScreenState extends State<HomeScreen> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+    final sizeWidth = screenSize.width;
+    final sizeHeight = screenSize.height;
+
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: CustomColors.scaffoldBg,
@@ -25,6 +29,10 @@ class _HomeScreenState extends State<HomeScreen> {
             onMenuTap: () {
               scaffoldKey.currentState?.openEndDrawer();
             },
+          ),
+          MainHome(
+            sizeHeight: sizeHeight,
+            sizeWidth: sizeWidth,
           ),
           //* SKILLS
           Container(
@@ -57,4 +65,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
