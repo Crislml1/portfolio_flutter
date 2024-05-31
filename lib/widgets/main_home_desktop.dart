@@ -14,12 +14,14 @@ class MainHomeDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(
-        horizontal: 20,
+      margin: const EdgeInsets.only(
+        // horizontal: 20,
+        left: 20,
+        right: 20,
       ),
       height: sizeHeight / 1.2,
       constraints: const BoxConstraints(
-        minHeight: 350,
+        minHeight: 450,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -68,7 +70,7 @@ class MainHomeDesktop extends StatelessWidget {
               )
             ],
           ),
-          const SizedBox(height: 50),
+          const SizedBox(height: 20),
           Flexible(
             child: ConstrainedBox(
               constraints: BoxConstraints(
