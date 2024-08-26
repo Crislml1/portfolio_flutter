@@ -21,7 +21,7 @@ class MainHomeDesktop extends StatelessWidget {
       ),
       height: sizeHeight / 1.2,
       constraints: const BoxConstraints(
-        minHeight: 450,
+        minHeight: 670,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
